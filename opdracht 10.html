@@ -10,41 +10,19 @@
 
 robotArm.speed = 500;
 
-robotArm.grab();
-for(var i=0; i<9; i++){
-  robotArm.moveRight();
+var blok = 8;
+for(var pakje=0; pakje<=4; pakje++){
+	robotArm.grab();
+	for(var rechts=0; rechts<=blok; rechts++){
+		robotArm.moveRight();
+	}
+		var blok = blok-1;
+		robotArm.drop();
+		for(var links=0; links<=blok; links++){
+			robotArm.moveLeft();
+		}
+		var blok = blok-1;
 }
-robotArm.drop();
-for(var j=0; j<8; j++){
-  robotArm.moveLeft();
-}
-robotArm.grab();
-for(var k=0; k<7; k++){
-  robotArm.moveRight();
-}
-robotArm.drop();
-for(var l=0; l<6; l++){
-  robotArm.moveLeft();
-}
-robotArm.grab();
-for(var m=0; m<5; m++){
-  robotArm.moveRight();
-}
-robotArm.drop();
-for(var n=0; n<4; n++){
-  robotArm.moveLeft();
-}
-robotArm.grab();
-for(var o=0; o<3; o++){
-  robotArm.moveRight();
-}
-robotArm.drop();
-for(var p=0; p<2; p++){
-  robotArm.moveLeft();
-}
-robotArm.grab();
-robotArm.moveRight();
-robotArm.drop();
 
   robotArm.run();
 </script>

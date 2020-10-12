@@ -10,22 +10,22 @@
 
 robotArm.speed = 500;
 
-for(var i=0; i<9; i++){
-  robotArm.moveRight();
-}
-for(var i=0; i<9; i++){
+for(var i=9; i>0; i--){
   robotArm.grab();
 var color=robotArm.scan();
 if(color == "red"){
+  for(var rechts=1; rechts<=i; rechts++){
   robotArm.moveRight();
+}
   robotArm.drop();
-  robotArm.moveLeft();
-  robotArm.moveLeft();
+  for(var lefty=1; lefty<=i-1;lefty++){
+    robotArm.moveLeft();
+  }
 }
 
 else{
   robotArm.drop();
-  robotArm.moveLeft();
+  robotArm.moveRight();
 }
 }
 
